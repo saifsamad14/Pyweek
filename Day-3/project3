@@ -1,0 +1,35 @@
+import pandas as pd
+
+#load the csv file into a pandas df
+df = pd.read_csv('C:\\Users\\khaja\\OneDrive\\Desktop\\pyweek\\day 3\\ipl-matches.csv')
+#display 5 rows
+print(df.head())
+#show no. of rows and columns
+# print(df.shape())
+
+#task-2
+#basic insights (questions)
+#list all unique seasons and teams
+print(df['Team1'].unique())
+
+#how many matches were played per season?
+print(df['Season'].value_counts())
+
+#which team has won the most matches?
+print(df['WinningTeam'.value_counts().head(1)])
+
+#task -3 
+#show matches wher mumbai indian were the winner
+print(df['WinningTeam'][df['WinningTeam']=='Mumbai Indians'])
+#show all matches that went to a super over
+print(df[df['SuperOver']=='Y'])
+
+#show all matches held at "Eden Gardens"
+print(df[df['Venue']=='Eden Gardens'])
+
+
+#task-4(aggregation)
+#how many super over finishes have occured
+
+#check if toss winner is mathc winner is percentage
+print(df[df['TossWinner']==(df['WinningTeam'])].shape[0]/df.shape[0]*100)
