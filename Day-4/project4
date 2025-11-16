@@ -1,0 +1,37 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome import ChromeDriveManager
+import time
+import pandas as pd
+
+
+
+
+#step-2 Load the same URL
+url = ("https://webscraper.io/test-sites/e-commerce/ajax/computers/laptops")
+
+
+#setup chrome driver
+driver = webdriver.Chrome(service=Service(ChromeDriveManager().install()))
+driver.get(url)
+time.sleep(1)
+
+#step-4 Extract product names dynamically loaded
+products = driver.find_elements(By.CLASS_NAME, "thumbnail")
+
+data = []
+for product in products:
+    title = product.find_element(By.CLASS_NAME, "title").text
+    price = product.find_element(By.CLASS_NAME, "price").text
+    link = product.find_element(By.CLASS_NAME, "title").get_attribute("href")
+   
+    print(f"{title} -> {price} -> {link}")
+    data.append({"Title":title, "Price":price, "Link":link})
+
+#save to csv
+pd.DataFrame(data).to_csv("products.csv", index=False)
+print("\n Scraping complete! Data saved to laptops.csv")
+
+
+driver.quit()
