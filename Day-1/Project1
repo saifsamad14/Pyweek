@@ -1,0 +1,62 @@
+# exception handling
+text = "python programming"
+# print(text[6:10])#slicing
+# print(text[-4:])
+# print(text[::2])
+
+
+text1 = "I know"
+total_text = text + text1
+# print(total_text)#Concatenation
+
+#F-STRING
+# age = 25
+# name = "John"   
+#print(f"You can vote {name} your above age {age}")
+# print(text)
+
+#format
+# age = 25
+# name = "John" 
+# print(f"You can vote {name} your above age {age}".format(age, name))
+
+#length
+# string_1 = "I am a cloud champ"
+# count = len(string_1)
+#print(count)
+
+##List
+#creating lists
+# name = ["Alice", "Bob", "Charlie",22,24,29]
+# print(name[0])#accessing elements
+# print(name[1:3])#accessing elements from last 
+# #indexing and slicing
+
+#append() and extend()
+# names = ["abrar", "sabbir", "rakib"]
+# person = "arif"
+# final_name = names.append(person)
+# print(final_name)#append adds single element at the end of the list
+
+# names.extend([22,23,25])
+# print(names)
+
+#tuples
+# names = ("abrar", "sabbir", "rakib","azeem")
+# names.pop()
+# names.pop()#mulitple pops remove multiple elements
+# print(names)
+
+# names.remove("rakib")
+# print (names)
+
+# numbers = [10, 19,5, 3, 7, 2]
+# numbers.sort()
+# print(numbers)
+
+# stacks = ("mern stack","Mean stack","Django","Flask","Python")
+# print(stacks)
+#tuple unpacking
+# s1,s2,s3 = stacks
+# print(s1)
+# print(s2)
